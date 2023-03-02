@@ -8,6 +8,7 @@ public class Prism {
     private int height;
     private float corner;
 
+
     public Prism(int sideA, int sideB, int sideC, int height) {
         this.sideA = sideA;
         this.sideB = sideB;
@@ -38,11 +39,9 @@ public class Prism {
         return result;
     }
     public String areaSideByCorner() {
-        double sideC = Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideA, 2) - 2 * sideA * sideB * Math.cos(corner));
-        double s = (sideA + sideB + sideC) * height;
+        double side3 = Math.sqrt(Math.pow(sideB, 2) + Math.pow(sideA, 2) - 2 * sideA * sideB * Math.cos(corner));
+        double s = (sideA + sideB + side3) * height;
         String result = String.format("%.2f",s);
         return result;
     }
-
-
 }
