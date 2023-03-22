@@ -27,10 +27,12 @@ public class Num1 {
         if (dividers.size() == 0) {
             if (numberFix == 1) {
                 System.out.println("Your number is 'one'. It has only one div: 1.");
+            } else {
+                System.out.println("Your number is simple. It has only two divs: 1 and " + numberFix + ".");
             }
-            else { System.out.println("Your number is simple. It has only two divs: 1 and " + numberFix + "."); }
-            }
-        else { System.out.println("Divs of number " + numberFix + ": " + dividers); }
+        } else {
+            System.out.println("Divs of number " + numberFix + ": " + dividers);
+        }
     }
 }
 

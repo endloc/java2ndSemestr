@@ -34,23 +34,47 @@ public class BankAccount {
     }
 
     // перевод денег [transferAccount - счет, на который переводятся деньги]
-    public String moneyTransfer(BankAccount transferAccount, double transferAmount) {
+//    public String moneyTransfer(BankAccount transferAccount, double transferAmount) {
+//        if (this.accountNumber == -1 || transferAccount.accountNumber == -1) {
+//            return "false account(s) :)\n";
+//        }
+//        if (this.accountNumber == transferAccount.accountNumber) {
+//            return "transfer to the same account\n";
+//        }
+//        if (transferAmount < 0) {
+//            return "transfer amount is negative\n";
+//        }
+//        if (this.amountOfMoney < transferAmount) {
+//            return "the transfer amount is more than available\n";
+//        }
+//        this.amountOfMoney -= transferAmount;
+//        transferAccount.amountOfMoney += transferAmount;
+//        System.out.println("~ finished, accounts now: ~\n1) (-)");
+//        System.out.println(printObject() + "2) (+)");
+//        return transferAccount.printObject() + "\n";
+//    }
+    public boolean moneyTransfer(BankAccount transferAccount, double transferAmount) {
         if (this.accountNumber == -1 || transferAccount.accountNumber == -1) {
-            return "false account(s) :)\n";
+            System.out.println( "false account(s) :)\n");
+            return false;
         }
         if (this.accountNumber == transferAccount.accountNumber) {
-            return "transfer to the same account\n";
+            System.out.println("transfer to the same account\n");
+            return false;
         }
         if (transferAmount < 0) {
-            return "transfer amount is negative\n";
+            System.out.println("transfer amount is negative\n");
+            return false;
         }
         if (this.amountOfMoney < transferAmount) {
-            return "the transfer amount is more than available\n";
+            System.out.println("the transfer amount is more than available\n");
+            return false;
         }
         this.amountOfMoney -= transferAmount;
         transferAccount.amountOfMoney += transferAmount;
-        System.out.println("~ finished, accounts now: ~\n1) (-)");
-        System.out.println(printObject() + "2) (+)");
-        return transferAccount.printObject() + "\n";
+        System.out.println("~ finished, accounts now: ~\n1) (+)");
+        System.out.println(printObject() + "2) (-)");
+        System.out.println(transferAccount.printObject() + "\n");
+        return true;
     }
 }
